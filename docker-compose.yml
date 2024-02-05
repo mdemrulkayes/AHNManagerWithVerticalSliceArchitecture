@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  ahnmanager.verticalslicearchitecture:
+    image: AuditHistoryAndNotificationManager
+    build:
+      context: .
+      dockerfile: src/AhnManager.VerticalSliceArchitecture/Dockerfile
+    ports:
+    - "5003:5003"
+    - "5004:5004"
