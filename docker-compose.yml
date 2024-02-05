@@ -1,11 +1,11 @@
 version: '3.4'
 
 services:
-  ahnmanager.verticalslicearchitecture:
-    image: AuditHistoryAndNotificationManager
+  verticalslicearchitecture.api:
+    image: product-api
     build:
       context: .
-      dockerfile: src/AhnManager.VerticalSliceArchitecture/Dockerfile
+      dockerfile: src/VerticalSliceArchitecture.Api/Dockerfile
     ports:
-    - "5003:5003"
     - "5004:5004"
+    - "5005:5005"

@@ -1,6 +1,0 @@
-@AhnManager.VerticalSliceArchitecture_HostAddress = http://localhost:5043
-
-GET {{AhnManager.VerticalSliceArchitecture_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

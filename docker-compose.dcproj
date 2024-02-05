@@ -4,10 +4,10 @@
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
     <DockerPublishLocally>False</DockerPublishLocally>
-    <ProjectGuid>f856ffa3-89cf-4de7-b50e-0343c9f5ecda</ProjectGuid>
+    <ProjectGuid>5bd14894-9db1-4a7d-9a22-23c889468934</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
-    <DockerServiceName>ahnmanager.verticalslicearchitecture</DockerServiceName>
+    <DockerServiceName>verticalslicearchitecture.api</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">
