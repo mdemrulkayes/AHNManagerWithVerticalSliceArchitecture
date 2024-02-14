@@ -12,6 +12,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VerticalSliceArchitecture.A
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{5BD14894-9DB1-4A7D-9A22-23C889468934}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VerticalSliceArchitecture.SharedKernel", "src\SharedKarnel\VerticalSliceArchitecture.SharedKernel.csproj", "{2F576E3F-8611-4A8E-AEB1-44702F464A66}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,12 +28,17 @@ Global
 		{5BD14894-9DB1-4A7D-9A22-23C889468934}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BD14894-9DB1-4A7D-9A22-23C889468934}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BD14894-9DB1-4A7D-9A22-23C889468934}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F576E3F-8611-4A8E-AEB1-44702F464A66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F576E3F-8611-4A8E-AEB1-44702F464A66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F576E3F-8611-4A8E-AEB1-44702F464A66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F576E3F-8611-4A8E-AEB1-44702F464A66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1EEA87DA-342D-4C42-A9C6-DF952947E4F9} = {1D1E4A74-6489-421C-A288-696C55C638D8}
+		{2F576E3F-8611-4A8E-AEB1-44702F464A66} = {1D1E4A74-6489-421C-A288-696C55C638D8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AAC4EB8B-A2BB-443C-9889-5603F58FD080}
