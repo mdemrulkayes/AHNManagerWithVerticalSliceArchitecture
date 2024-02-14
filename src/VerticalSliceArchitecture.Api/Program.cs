@@ -1,5 +1,7 @@
 using Serilog;
 using Serilog.Events;
+using VerticalSliceArchitecture.Api.Extensions;
+using VerticalSliceArchitecture.Api.Features.Todo.TodoList;
 
 var config = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json", optional: false)
@@ -15,7 +17,7 @@ var builder = WebApplication.CreateBuilder(args);
 try
 {
     builder.Host.UseSerilog();
-
+    builder.Services.RegisterDatabase(builder.Configuration);
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
 
@@ -38,15 +40,12 @@ try
             diagnosticContext.Set("RequestScheme", httpContext.Request.Scheme);
         };
     });
+    app.MigrateDatabase();
     app.UseSwagger();
     app.UseSwaggerUI();
     app.UseHttpsRedirection();
 
-    app.MapGet("weather", (ILogger<Program> logger) =>
-    {
-        logger.LogInformation("Weather API called");
-        return Results.Ok();
-    });
+    app.MapTodoListRoutes();
 
     app.Run();
 }
