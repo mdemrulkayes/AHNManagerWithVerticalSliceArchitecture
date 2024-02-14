@@ -12,7 +12,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VerticalSliceArchitecture.A
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{5BD14894-9DB1-4A7D-9A22-23C889468934}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VerticalSliceArchitecture.SharedKernel", "src\SharedKarnel\VerticalSliceArchitecture.SharedKernel.csproj", "{2F576E3F-8611-4A8E-AEB1-44702F464A66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VerticalSliceArchitecture.SharedKernel", "src\SharedKarnel\VerticalSliceArchitecture.SharedKernel.csproj", "{2F576E3F-8611-4A8E-AEB1-44702F464A66}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

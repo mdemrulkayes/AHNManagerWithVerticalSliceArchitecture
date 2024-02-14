@@ -1,3 +1,5 @@
+using System.Reflection;
+using FluentValidation;
 using Serilog;
 using Serilog.Events;
 using VerticalSliceArchitecture.Api.Extensions;
@@ -18,6 +20,16 @@ try
 {
     builder.Host.UseSerilog();
     builder.Services.RegisterDatabase(builder.Configuration);
+
+    builder.Services.AddMediatR(configuration =>
+    {
+        configuration.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly());
+    });
+
+    ValidatorOptions.Global.DefaultClassLevelCascadeMode = CascadeMode.Continue;
+    ValidatorOptions.Global.DefaultRuleLevelCascadeMode = CascadeMode.Stop;
+    builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly(), includeInternalTypes: true);
+
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
 

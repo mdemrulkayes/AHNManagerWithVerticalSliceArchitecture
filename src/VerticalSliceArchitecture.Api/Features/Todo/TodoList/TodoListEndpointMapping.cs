@@ -4,7 +4,7 @@ public static class TodoListEndpointMapping
 {
     public static IEndpointRouteBuilder MapTodoListRoutes(this IEndpointRouteBuilder builder)
     {
-        builder.MapGroup("Todo")
+        builder.MapGroup("/api/todo")
             .WithTags("Todo")
             .WithOpenApi()
             .MapCreateTodo();
