@@ -6,7 +6,7 @@ public static class CreateTodoListEndpoint
 {
     public static IEndpointRouteBuilder MapCreateTodo(this IEndpointRouteBuilder builder)
     {
-        builder.MapPost("/", async (CreateTodoListRequest request,IMediator mediator) =>
+        builder.MapPost("/", async (CreateTodoListCommand request,IMediator mediator) =>
         {
             var result = await mediator.Send(request);
             return TypedResults.Ok(result.Value);

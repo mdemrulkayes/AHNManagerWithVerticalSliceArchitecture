@@ -3,12 +3,12 @@ using VerticalSliceArchitecture.SharedKernel;
 
 namespace VerticalSliceArchitecture.Api.Features.Todo.TodoList;
 
-public sealed class CreateTodoList(ApplicationDbContext dbContext, ILogger<CreateTodoList> logger) : ICommandHandler<CreateTodoListRequest, Result<CreateTodoListResponse>>
+public sealed class CreateTodoList(ApplicationDbContext dbContext, ILogger<CreateTodoList> logger) : ICommandHandler<CreateTodoListCommand, Result<CreateTodoListResponse>>
 {
-    public async Task<Result<CreateTodoListResponse>> Handle(CreateTodoListRequest request, CancellationToken cancellationToken = default)
+    public async Task<Result<CreateTodoListResponse>> Handle(CreateTodoListCommand command, CancellationToken cancellationToken = default)
     {
         logger.LogInformation("Inside Create todo list command handler");
-        var todoList = Domain.TodoList.Create(request.Name, request.Description);
+        var todoList = Domain.TodoList.Create(command.Name, command.Description);
         if (!todoList.IsSuccess || todoList.Value is null)
         {
             return todoList.Error;

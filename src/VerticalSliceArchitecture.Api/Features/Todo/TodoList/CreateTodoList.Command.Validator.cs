@@ -2,7 +2,7 @@
 
 namespace VerticalSliceArchitecture.Api.Features.Todo.TodoList;
 
-public class CreateTodoListRequestValidator : AbstractValidator<CreateTodoListRequest>
+public class CreateTodoListRequestValidator : AbstractValidator<CreateTodoListCommand>
 {
     public CreateTodoListRequestValidator()
     {
