@@ -2,6 +2,7 @@ using System.Reflection;
 using FluentValidation;
 using Serilog;
 using Serilog.Events;
+using VerticalSliceArchitecture.Api.Exceptions;
 using VerticalSliceArchitecture.Api.Extensions;
 using VerticalSliceArchitecture.Api.Features.Todo.TodoList;
 
@@ -29,7 +30,8 @@ try
     ValidatorOptions.Global.DefaultClassLevelCascadeMode = CascadeMode.Continue;
     ValidatorOptions.Global.DefaultRuleLevelCascadeMode = CascadeMode.Stop;
     builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly(), includeInternalTypes: true);
-
+    builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+    builder.Services.AddProblemDetails();
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
 
@@ -53,6 +55,7 @@ try
         };
     });
     app.MigrateDatabase();
+    app.UseExceptionHandler();
     app.UseSwagger();
     app.UseSwaggerUI();
     app.UseHttpsRedirection();
