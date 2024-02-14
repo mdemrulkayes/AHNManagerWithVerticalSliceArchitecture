@@ -5,6 +5,7 @@ using Serilog.Events;
 using VerticalSliceArchitecture.Api.Exceptions;
 using VerticalSliceArchitecture.Api.Extensions;
 using VerticalSliceArchitecture.Api.Features.Todo.TodoList;
+using VerticalSliceArchitecture.Api.Middlewares;
 
 var config = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json", optional: false)
@@ -37,7 +38,7 @@ try
 
 
     var app = builder.Build();
-
+    app.UseMiddleware<AddCorrelationIdMiddleware>();
     // Configure the HTTP request pipeline.
     app.UseSerilogRequestLogging(options =>
     {
