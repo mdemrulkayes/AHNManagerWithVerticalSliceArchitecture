@@ -1,0 +1,21 @@
+@hostName=localhost
+@port=7290
+@baseUrl=https://{{hostName}}:{{port}}
+
+GET {{baseUrl}}/api/todo?PageNumber=1&PageSize=10
+Content-Type:application/json
+
+###
+
+GET {{baseUrl}}/api/todo/10002
+Content-Type:application/json
+
+###
+
+POST {{baseUrl}}/api/todo
+Content-Type:application/json
+
+{
+  "name": "Test todo 1",
+  "description": ""
+}
