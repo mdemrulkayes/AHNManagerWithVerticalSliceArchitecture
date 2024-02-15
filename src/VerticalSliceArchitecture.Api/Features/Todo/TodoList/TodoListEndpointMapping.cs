@@ -7,7 +7,8 @@ public static class TodoListEndpointMapping
         builder.MapGroup("/api/todo")
             .WithTags("Todo")
             .WithOpenApi()
-            .MapCreateTodo();
+            .MapCreateTodo()
+            .MapGetTodos();
         return builder;
     }
 }
